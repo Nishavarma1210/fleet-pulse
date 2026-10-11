@@ -1,0 +1,41 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.toolbar {
+  flex: none;
+  background: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
+}
+
+.brand {
+  font: var(--mat-sys-title-large);
+}
+
+.spacer {
+  flex: 1;
+}
+
+main {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+// Lets keyboard users jump past the toolbar; it is only visible while focused.
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -48px;
+  z-index: 10;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+
+  &:focus {
+    top: 8px;
+  }
+}
